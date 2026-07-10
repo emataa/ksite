@@ -1,0 +1,605 @@
+/* =========================================================
+   Portfolio — modern, off-white + navy
+   Display: bold sans (system). Body: serif. Navy accent.
+   ========================================================= */
+
+:root {
+  --paper: #f6f4ee;
+  --ink: #111111;
+  --ink-soft: #2a2a2a;
+  --muted: #6b6357;
+  --rule: #d9d3c4;
+  --accent: #1d3557;       /* navy */
+  --accent-soft: #2a4a78;
+  --max-width: 760px;
+  --header-h: 72px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Charter", "Iowan Old Style", "Baskerville", "Times New Roman",
+    "Source Serif Pro", serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+a:hover,
+a:focus-visible {
+  text-decoration-color: var(--accent);
+  color: var(--accent);
+}
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+p {
+  margin: 0;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* =========================================================
+   Header / Nav
+   ========================================================= */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-h);
+  background: rgba(246, 244, 238, 0.78);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid transparent;
+  z-index: 50;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+}
+.site-header.is-scrolled {
+  border-bottom-color: var(--rule);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.brand {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue",
+    Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand:hover {
+  color: var(--accent);
+}
+
+.nav-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  z-index: 60;
+}
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform 0.25s var(--ease), opacity 0.2s var(--ease);
+  transform-origin: center;
+}
+body.nav-open .nav-toggle span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+body.nav-open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+body.nav-open .nav-toggle span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.site-nav {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  transform: translateY(-110%);
+  transition: transform 0.3s var(--ease);
+  z-index: 40;
+}
+body.nav-open .site-nav {
+  transform: translateY(0);
+}
+
+.site-nav ul {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 28px 24px;
+}
+.site-nav li {
+  border-top: 1px solid var(--rule);
+}
+.site-nav li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+.site-nav a {
+  display: block;
+  padding: 16px 4px;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue",
+    Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a.is-active {
+  color: var(--accent);
+}
+
+/* =========================================================
+   Hero
+   ========================================================= */
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - var(--header-h));
+  padding: calc(var(--header-h) + 64px) 0 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue",
+    Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 20px;
+  position: relative;
+  padding-left: 36px;
+}
+.eyebrow::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  transform: translateY(-50%);
+}
+
+.hero-name {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue",
+    Arial, sans-serif;
+  font-size: clamp(2.75rem, 9vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+  margin: 0 0 24px;
+  color: var(--ink);
+}
+
+.hero-claim {
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  max-width: 32em;
+  margin: 0 0 40px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue",
+    Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 13px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease),
+    border-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.btn:hover,
+.btn:focus-visible {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--paper);
+  border-color: var(--accent);
+}
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--accent-soft);
+  border-color: var(--accent-soft);
+  color: var(--paper);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 40px;
+  border: 1.5px solid var(--ink);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+.scroll-cue span {
+  width: 2px;
+  height: 8px;
+  background: var(--ink);
+  border-radius: 2px;
+  animation: scroll-bounce 1.6s var(--ease) infinite;
+}
+@keyframes scroll-bounce {
+  0%   { transform: translateY(0); opacity: 1; }
+  60%  { transform: translateY(12px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+/* =========================================================
+   Sections
+   ========================================================= */
+
+.section {
+  padding: 96px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.section-head {
+  margin-bottom: 56px;
+}
+
+.section-num {
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue",
+    Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin-bottom: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.section-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue",
+    Arial, sans-serif;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0 0 12px;
+}
+
+.section-blurb {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 32em;
+}
+
+/* =========================================================
+   Work
+   ========================================================= */
+
+.work-list {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.entry {
+  padding: 4px 0;
+}
+
+.entry-row {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.entry-year {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue",
+    Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  min-width: 3.5em;
+}
+
+.entry-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue",
+    Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.entry-lede {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  max-width: 38em;
+  margin: 0 0 8px;
+}
+
+.entry-tech {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0 0 10px;
+}
+
+.entry-links {
+  font-size: 0.92rem;
+}
+.entry-links .sep {
+  color: var(--muted);
+  margin: 0 6px;
+}
+
+/* Figure inside any work entry: compact, in line with the text column. */
+.entry-figure {
+  margin: 20px 0;
+  width: 100%;
+  max-width: 520px;
+}
+.entry-figure img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: #fff;
+}
+.entry-figure a {
+  text-decoration: none;
+  display: block;
+}
+.entry-figure a:hover img,
+.entry-figure a:focus-visible img {
+  border-color: var(--accent);
+}
+
+/* =========================================================
+   About
+   ========================================================= */
+
+.prose {
+  max-width: 36em;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.prose p {
+  margin: 0 0 1em;
+}
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   Contact
+   ========================================================= */
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue",
+    Arial, sans-serif;
+  font-weight: 500;
+}
+
+.contact-line a {
+  text-decoration-color: var(--rule);
+}
+.contact-line .sep {
+  color: var(--muted);
+  margin: 0 8px;
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: 28px 0 36px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 48px;
+}
+
+/* =========================================================
+   Reveal-on-scroll animation
+   ========================================================= */
+
+.reveal [data-reveal-child] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal.is-visible [data-reveal-child] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger the children inside any reveal block. */
+.reveal.is-visible [data-reveal-child]:nth-child(1) { transition-delay: 0ms; }
+.reveal.is-visible [data-reveal-child]:nth-child(2) { transition-delay: 80ms; }
+.reveal.is-visible [data-reveal-child]:nth-child(3) { transition-delay: 160ms; }
+.reveal.is-visible [data-reveal-child]:nth-child(4) { transition-delay: 240ms; }
+.reveal.is-visible [data-reveal-child]:nth-child(5) { transition-delay: 320ms; }
+.reveal.is-visible [data-reveal-child]:nth-child(6) { transition-delay: 400ms; }
+
+/* =========================================================
+   Mobile tweaks
+   ========================================================= */
+
+@media (max-width: 540px) {
+  .container {
+    padding: 0 20px;
+  }
+  .hero {
+    padding-bottom: 80px;
+  }
+  .hero-name {
+    font-size: clamp(2.4rem, 12vw, 3.5rem);
+  }
+  .section {
+    padding: 64px 0;
+  }
+  .section-head {
+    margin-bottom: 36px;
+  }
+  .entry-title {
+    font-size: 1.25rem;
+  }
+  .scroll-cue {
+    bottom: 16px;
+  }
+}
+
+/* =========================================================
+   Desktop: inline nav
+   ========================================================= */
+
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+  .site-nav {
+    position: static;
+    transform: none;
+    background: transparent;
+    border-bottom: 0;
+  }
+  .site-nav ul {
+    flex-direction: row;
+    gap: 32px;
+    padding: 0;
+  }
+  .site-nav li {
+    border: 0;
+  }
+  .site-nav li:last-child {
+    border: 0;
+  }
+  .site-nav a {
+    padding: 6px 0;
+    font-size: 0.92rem;
+  }
+}
+
+/* =========================================================
+   Reduced motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal [data-reveal-child] {
+    opacity: 1;
+    transform: none;
+  }
+}

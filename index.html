@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ken Emata</title>
+    <meta name="description" content="Ken Emata - selected work." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header" id="siteHeader">
+      <div class="container header-inner">
+        <a href="#top" class="brand">ken emata</a>
+
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="site-nav" id="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="#work" data-nav>Work</a></li>
+            <li><a href="#about" data-nav>About</a></li>
+            <li><a href="#contact" data-nav>Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top" class="container">
+      <!-- ============ HERO ============ -->
+      <!-- TODO: replace name, role/location, claim -->
+      <section class="hero reveal" data-reveal>
+          <p class="eyebrow" data-reveal-child>Developer & CS Student</p>
+        <h1 class="hero-name" data-reveal-child>Ken Emata</h1>
+        <p class="hero-location" data-reveal-child>Vancouver, BC</p>
+        <p class="hero-claim" data-reveal-child>
+          Selected work, 2020 - present.
+        </p>
+        <div class="hero-actions" data-reveal-child>
+          <a class="btn btn-primary" href="#work">View Work</a>
+          <a
+            class="btn btn-ghost"
+            href="assets/Kenneth Emata Resume.pdf"
+            target="_blank"
+            rel="noopener"
+            >Resume</a
+          >
+          <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+        </div>
+        <div class="scroll-cue" data-reveal-child aria-hidden="true">
+          <span></span>
+        </div>
+      </section>
+
+      <!-- ============ WORK ============ -->
+      <section id="work" class="section">
+        <header class="section-head reveal" data-reveal>
+          <span class="section-num" data-reveal-child>01</span>
+          <h2 class="section-title" data-reveal-child>Work</h2>
+          <p class="section-blurb" data-reveal-child>
+            A selection of recent projects.
+          </p>
+        </header>
+
+        <ol class="work-list">
+          <li class="entry entry--featured reveal" data-reveal>
+            <div class="entry-row" data-reveal-child>
+              <span class="entry-year">Jul 2024</span>
+              <h3 class="entry-title">MarketMimic</h3>
+            </div>
+            <figure class="entry-figure" data-reveal-child>
+              <a
+                href="https://github.com/munir-nuggets/CMPT276-project"
+                target="_blank"
+                rel="noopener"
+                aria-label="Open MarketMimic on GitHub"
+              >
+                <img
+                  src="assets/mm.png"
+                  alt="MarketMimic dashboard showing a watchlist and interactive price chart"
+                  loading="lazy"
+                />
+              </a>
+            </figure>
+            <p class="entry-lede" data-reveal-child>
+              A web-based stock trading simulator for first-time investors.
+              Users track up to 50 tickers on a custom watchlist, view
+              interactive historical charts, and place simulated trades with
+              virtual currency, a low-risk way to practice before trading
+              with real money.
+            </p>
+            <p class="entry-tech" data-reveal-child>
+              Built with Java, HTML/CSS/JS, Maven, Docker.
+            </p>
+            <p class="entry-links" data-reveal-child>
+              <a
+                href="https://github.com/munir-nuggets/CMPT276-project"
+                target="_blank"
+                rel="noopener"
+                >Source</a
+              >
+            </p>
+          </li>
+
+          <li class="entry reveal" data-reveal>
+            <div class="entry-row" data-reveal-child>
+              <span class="entry-year">Oct 2025</span>
+              <h3 class="entry-title">Turtle Trips</h3>
+            </div>
+            <figure class="entry-figure" data-reveal-child>
+              <a
+                href="https://github.com/ltanafranca1004/Turtle-Trips-AI"
+                target="_blank"
+                rel="noopener"
+                aria-label="Open Turtle Trips on GitHub"
+              >
+                <img
+                  src="assets/tta.jpg"
+                  alt="Turtle Trips landing page prompting 'Where would you like to go?'"
+                  loading="lazy"
+                />
+              </a>
+            </figure>
+            <p class="entry-lede" data-reveal-child>
+              An AI-powered travel planner built at StormHacks 2025. Users
+              enter a destination and the app generates a trip plan using
+              Google Gemini, with Google Maps handling the underlying
+              places, directions, and geocoding.
+            </p>
+            <p class="entry-tech" data-reveal-child>
+              Built with Python, Flask, HTML/CSS/JS, Gemini API, Google Maps.
+            </p>
+            <p class="entry-links" data-reveal-child>
+              <a
+                href="https://github.com/ltanafranca1004/Turtle-Trips-AI"
+                target="_blank"
+                rel="noopener"
+                >Source</a
+              >
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ============ ABOUT ============ -->
+      <section id="about" class="section about-section">
+        <header class="section-head reveal" data-reveal>
+          <span class="section-num" data-reveal-child>02</span>
+          <h2 class="section-title" data-reveal-child>About</h2>
+        </header>
+        <div class="prose reveal" data-reveal>
+          <p data-reveal-child>
+          I'm a fourth-year computer science student at Simon Fraser University. I focus my studies on low-level systems, operating systems, compilers, 
+          and the tools underneath everything else.
+          I'm also into cybersecurity, I enjoy learning about the vulnerabilites in code that come from using low-level languages like C, 
+          and learning about how weak design choices can lead to exploits.
+          <p data-reveal-child>
+          Outside of the tech space, I coach youth basketball and get into pickup runs when I can.
+          I've been weight lifting for 4+ years now. Occasionaly, I spend weekends hiking or backpacking. I've got a cat named Lucky at home,      
+         and no matter where I go, I've already got the food spots figured out.   </p>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section id="contact" class="section contact-section">
+        <header class="section-head reveal" data-reveal>
+          <span class="section-num" data-reveal-child>03</span>
+          <h2 class="section-title" data-reveal-child>Contact</h2>
+        </header>
+        <p class="contact reveal" data-reveal>
+          <span class="contact-line" data-reveal-child>
+            <a href="mailto:kenlemata@gmail.com">kenlemata@gmail.com</a>
+          </span>
+          <span class="contact-line" data-reveal-child>
+            <a
+              href="assets/Kenneth Emata Resume.pdf"
+              target="_blank"
+              rel="noopener"
+              >Resume</a
+            >
+            <span class="sep">·</span>
+            <a href="https://github.com/emataa" target="_blank" rel="noopener">GitHub</a>
+            <span class="sep">·</span>
+            <a href="https://www.linkedin.com/in/kenemata/" target="_blank" rel="noopener">LinkedIn</a>
+          </span>
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> ken emata</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
