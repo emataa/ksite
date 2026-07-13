@@ -114,4 +114,17 @@
 
     sections.forEach(({ el }) => spyObserver.observe(el));
   }
+
+  // --- Carousel: cycle images inside .entry-figure--carousel -------------
+  const carousels = document.querySelectorAll(".entry-figure--carousel");
+  carousels.forEach((fig) => {
+    const imgs = fig.querySelectorAll(".entry-figure-img");
+    if (imgs.length < 2) return;
+    let i = 0;
+    setInterval(() => {
+      imgs[i].classList.remove("is-active");
+      i = (i + 1) % imgs.length;
+      imgs[i].classList.add("is-active");
+    }, 3000);
+  });
 })();

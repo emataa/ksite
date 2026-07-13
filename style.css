@@ -395,6 +395,44 @@ body.nav-open .site-nav {
   font-variant-numeric: tabular-nums;
   min-width: 3.5em;
 }
+.entry-year--long {
+  min-width: 11em;
+}
+.entry-year--block {
+  display: block;
+  margin: 0 0 6px;
+}
+
+.entry-org {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue",
+    Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0;
+  margin-top: 4px;
+}
+
+.entry-bullets {
+  list-style: disc;
+  padding-left: 1.2em;
+  margin: 0;
+  max-width: 38em;
+}
+.entry-bullets li {
+  margin: 0 0 8px;
+  line-height: 1.6;
+}
+.entry-bullets li:last-child {
+  margin-bottom: 0;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
 
 .entry-title {
   font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue",
@@ -403,7 +441,7 @@ body.nav-open .site-nav {
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.2;
-  margin: 0;
+  margin: 0 0 16px;
 }
 
 .entry-lede {
@@ -450,6 +488,33 @@ body.nav-open .site-nav {
 .entry-figure a:hover img,
 .entry-figure a:focus-visible img {
   border-color: var(--accent);
+}
+
+/* Carousel figure: stack images, crossfade between them via JS. */
+.entry-figure--carousel {
+  position: relative;
+  max-height: 480px;
+  overflow: hidden;
+  background: #fff;
+}
+.entry-figure--carousel a {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+.entry-figure--carousel .entry-figure-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0;
+  transition: opacity 0.6s var(--ease);
+}
+.entry-figure--carousel .entry-figure-img.is-active {
+  opacity: 1;
 }
 
 /* =========================================================
@@ -553,20 +618,46 @@ body.nav-open .site-nav {
   }
 }
 
+/* Mobile: no nav, no burger — just the brand. Users scroll the page. */
+@media (max-width: 767px) {
+  .site-header {
+    display: flex;
+    align-items: center;
+    height: var(--header-h);
+  }
+  .header-inner {
+    flex: 1;
+  }
+  .nav-toggle,
+  .site-nav {
+    display: none;
+  }
+}
+
 /* =========================================================
    Desktop: inline nav
    ========================================================= */
 
 @media (min-width: 768px) {
+  .site-header {
+    display: flex;
+    align-items: center;
+    height: var(--header-h);
+  }
+  .header-inner {
+    flex: 1;
+  }
   .nav-toggle {
     display: none;
   }
-  .site-nav {
-    position: static;
-    transform: none;
-    background: transparent;
-    border-bottom: 0;
-  }
+ .site-nav {
+  position: static;
+  transform: none;
+  background: transparent;
+  border-bottom: 0;
+  margin-right: 100px;
+}
+
   .site-nav ul {
     flex-direction: row;
     gap: 32px;
