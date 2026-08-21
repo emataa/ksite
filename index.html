@@ -147,6 +147,32 @@
               >
             </p>
           </li>
+
+          <li class="entry reveal" data-reveal>
+            <div class="entry-row" data-reveal-child>
+              <span class="entry-year">Apr 2026</span>
+              <h3 class="entry-title">Connect Four</h3>
+            </div>
+            <p class="entry-lede" data-reveal-child>
+              A two-player Connect Four game that communicates over a raw TCP
+              socket. A server binds to localhost, accepts
+              two clients on dedicated threads, and broadcasts board updates
+              back to each player. Game state, move validation, and win
+              detection all live server-side; the client is a tkinter GUI
+              driven by incoming JSON messages.
+            </p>
+            <p class="entry-tech" data-reveal-child>
+              Built with Python.
+            </p>
+            <p class="entry-links" data-reveal-child>
+              <a
+                href="https://github.com/emataa/CMPT371_A3_ConnectFour/tree/main"
+                target="_blank"
+                rel="noopener"
+                >Source</a
+              >
+            </p>
+          </li>
         </ol>
       </section>
 
