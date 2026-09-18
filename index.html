@@ -38,7 +38,7 @@
       <!-- ============ HERO ============ -->
       <!-- TODO: replace name, role/location, claim -->
       <section class="hero reveal" data-reveal>
-          <p class="eyebrow" data-reveal-child>Developer & CS Student</p>
+        <p class="eyebrow" data-reveal-child>Developer & CS Student</p>
         <h1 class="hero-name" data-reveal-child>Ken Emata</h1>
         <p class="hero-location" data-reveal-child>Vancouver, BC</p>
         <p class="hero-claim" data-reveal-child>
@@ -65,44 +65,64 @@
         <header class="section-head reveal" data-reveal>
           <span class="section-num" data-reveal-child>01</span>
           <h2 class="section-title" data-reveal-child>Work</h2>
-          <p class="section-blurb" data-reveal-child>
-            A selection of recent projects.
-          </p>
+          <p class="section-blurb" data-reveal-child>My recent projects.</p>
         </header>
 
         <ol class="work-list">
           <li class="entry entry--featured reveal" data-reveal>
             <div class="entry-row" data-reveal-child>
-              <span class="entry-year">Jul 2024</span>
-              <h3 class="entry-title">MarketMimic</h3>
+              <span class="entry-year">Sep 2026</span>
+              <h3 class="entry-title">Cellar</h3>
             </div>
             <figure class="entry-figure" data-reveal-child>
               <a
-                href="https://github.com/munir-nuggets/CMPT276-project"
+                href="https://github.com/emataa/cellar"
                 target="_blank"
                 rel="noopener"
-                aria-label="Open MarketMimic on GitHub"
+                aria-label="Open Cellar on GitHub"
               >
                 <img
-                  src="assets/mm.png"
-                  alt="MarketMimic dashboard showing a watchlist and interactive price chart"
+                  src="assets/cellar.png"
+                  alt="Cellar CLI showing the help banner and available commands"
                   loading="lazy"
                 />
               </a>
             </figure>
             <p class="entry-lede" data-reveal-child>
-              A web-based stock trading simulator for first-time investors.
-              Users track up to 50 tickers on a custom watchlist, view
-              interactive historical charts, and place simulated trades with
-              virtual currency, a low-risk way to practice before trading
-              with real money.
+              A CLI password manager. Cellar generates and stores a unique
+              password per entry in a single encrypted file, so only one master
+              password needs to be remembered. Everything is encrypted with
+              Argon2id (key derivation) and AES-256-GCM (authenticated
+              encryption), all in one file on disk.
             </p>
-            <p class="entry-tech" data-reveal-child>
-              Built with Java, HTML/CSS/JS, Maven, Docker.
-            </p>
+            <p class="entry-tech" data-reveal-child>Built with Python.</p>
             <p class="entry-links" data-reveal-child>
               <a
-                href="https://github.com/munir-nuggets/CMPT276-project"
+                href="https://github.com/emataa/cellar"
+                target="_blank"
+                rel="noopener"
+                >Source</a
+              >
+            </p>
+          </li>
+
+          <li class="entry reveal" data-reveal>
+            <div class="entry-row" data-reveal-child>
+              <span class="entry-year">Apr 2026</span>
+              <h3 class="entry-title">Connect Four</h3>
+            </div>
+            <p class="entry-lede" data-reveal-child>
+              A two-player Connect Four game that communicates over a raw TCP
+              socket. A server binds to localhost, accepts two clients on
+              dedicated threads, and broadcasts board updates back to each
+              player. Game state, move validation, and win detection all live
+              server-side; the client is a tkinter GUI driven by incoming JSON
+              messages.
+            </p>
+            <p class="entry-tech" data-reveal-child>Built with Python.</p>
+            <p class="entry-links" data-reveal-child>
+              <a
+                href="https://github.com/emataa/CMPT371_A3_ConnectFour/tree/main"
                 target="_blank"
                 rel="noopener"
                 >Source</a
@@ -130,10 +150,10 @@
               </a>
             </figure>
             <p class="entry-lede" data-reveal-child>
-              An AI-powered travel planner built at StormHacks 2025. Users
-              enter a destination and the app generates a trip plan using
-              Google Gemini, with Google Maps handling the underlying
-              places, directions, and geocoding.
+              An AI-powered travel planner built at StormHacks 2025. Users enter
+              a destination and the app generates a trip plan using Google
+              Gemini, with Google Maps handling the underlying places,
+              directions, and geocoding.
             </p>
             <p class="entry-tech" data-reveal-child>
               Built with Python, Flask, HTML/CSS/JS, Gemini API, Google Maps.
@@ -150,23 +170,36 @@
 
           <li class="entry reveal" data-reveal>
             <div class="entry-row" data-reveal-child>
-              <span class="entry-year">Apr 2026</span>
-              <h3 class="entry-title">Connect Four</h3>
+              <span class="entry-year">Jul 2024</span>
+              <h3 class="entry-title">MarketMimic</h3>
             </div>
+            <figure class="entry-figure" data-reveal-child>
+              <a
+                href="https://github.com/munir-nuggets/CMPT276-project"
+                target="_blank"
+                rel="noopener"
+                aria-label="Open MarketMimic on GitHub"
+              >
+                <img
+                  src="assets/mm.png"
+                  alt="MarketMimic dashboard showing a watchlist and interactive price chart"
+                  loading="lazy"
+                />
+              </a>
+            </figure>
             <p class="entry-lede" data-reveal-child>
-              A two-player Connect Four game that communicates over a raw TCP
-              socket. A server binds to localhost, accepts
-              two clients on dedicated threads, and broadcasts board updates
-              back to each player. Game state, move validation, and win
-              detection all live server-side; the client is a tkinter GUI
-              driven by incoming JSON messages.
+              A web-based stock trading simulator for first-time investors.
+              Users track up to 50 tickers on a custom watchlist, view
+              interactive historical charts, and place simulated trades with
+              virtual currency, a low-risk way to practice before trading with
+              real money.
             </p>
             <p class="entry-tech" data-reveal-child>
-              Built with Python.
+              Built with Java, HTML/CSS/JS, Maven, Docker.
             </p>
             <p class="entry-links" data-reveal-child>
               <a
-                href="https://github.com/emataa/CMPT371_A3_ConnectFour/tree/main"
+                href="https://github.com/munir-nuggets/CMPT276-project"
                 target="_blank"
                 rel="noopener"
                 >Source</a
@@ -185,7 +218,11 @@
 
         <ol class="experience-list">
           <li class="entry reveal" data-reveal>
-            <span class="entry-year entry-year--long entry-year--block" data-reveal-child>Jun 2025 - Present</span>
+            <span
+              class="entry-year entry-year--long entry-year--block"
+              data-reveal-child
+              >Jun 2025 - Present</span
+            >
             <h3 class="entry-title" data-reveal-child>
               Classroom Facilitator / Curriculum Developer
               <span class="entry-org">STEMA Learning - Surrey, BC</span>
@@ -193,18 +230,18 @@
             <ul class="entry-bullets" data-reveal-child>
               <li>
                 Designed and delivered technical curriculum for 30+ students
-                ages 4-13, translating programming and engineering
-                fundamentals into structured, age-appropriate lessons.
+                ages 4-13, translating programming and engineering fundamentals
+                into structured, age-appropriate lessons.
               </li>
               <li>
-                Built programming modules in Python, JavaScript, HTML/CSS,
-                and Scratch covering core concepts including loops,
-                conditional logic, and variables.
+                Built programming modules in Python, JavaScript, HTML/CSS, and
+                Scratch covering core concepts including loops, conditional
+                logic, and variables.
               </li>
               <li>
-                Engineered hands-on engineering lessons using U20 Pro and
-                VEX GO kits, focusing on mechanical assembly, structural
-                stability, and sensor integration.
+                Engineered hands-on engineering lessons using U20 Pro and VEX GO
+                kits, focusing on mechanical assembly, structural stability, and
+                sensor integration.
               </li>
             </ul>
           </li>
@@ -219,14 +256,21 @@
         </header>
         <div class="prose reveal" data-reveal>
           <p data-reveal-child>
-          I'm a fourth-year computer science student at Simon Fraser University. I focus my studies on low-level systems, operating systems, compilers, 
-          and the tools underneath everything else.
-          I'm also into cybersecurity, I enjoy learning about the vulnerabilites in code that come from using low-level languages like C, 
-          and learning about how weak design choices can lead to exploits.
+            I'm a fourth-year computer science student at Simon Fraser
+            University. I focus my studies on low-level systems, operating
+            systems, compilers, and the tools underneath everything else. I'm
+            also into cybersecurity, I enjoy learning about the vulnerabilites
+            in code that come from using low-level languages like C, and
+            learning about how weak design choices can lead to exploits.
+          </p>
+
           <p data-reveal-child>
-          Outside of the tech space, I coach youth basketball and get into pickup runs when I can.
-          I've been weight lifting for 4+ years now. Occasionaly, I spend weekends hiking or backpacking. I've got a cat named Lucky at home,      
-         and no matter where I go, I've already got the food spots figured out.   </p>
+            Outside of the tech space, I coach youth basketball and get into
+            pickup runs when I can. I've been weight lifting for 4+ years now.
+            Occasionaly, I spend weekends hiking or backpacking. I've got a cat
+            named Lucky at home, and no matter where I go, I've already got the
+            food spots figured out.
+          </p>
         </div>
       </section>
 
@@ -248,9 +292,16 @@
               >Resume</a
             >
             <span class="sep">·</span>
-            <a href="https://github.com/emataa" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/emataa" target="_blank" rel="noopener"
+              >GitHub</a
+            >
             <span class="sep">·</span>
-            <a href="https://www.linkedin.com/in/kenemata/" target="_blank" rel="noopener">LinkedIn</a>
+            <a
+              href="https://www.linkedin.com/in/kenemata/"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
           </span>
         </p>
       </section>
